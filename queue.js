@@ -1,0 +1,41 @@
+// queue.js
+
+class Queue {
+  constructor() {
+    this.items = [];
+  }
+
+  enqueue(element) {
+    this.items.push(element);
+  }
+
+  dequeue() {
+    if (this.isEmpty()) return "Queue is empty!";
+    return this.items.shift();
+  }
+
+  front() {
+    return this.items[0];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+
+  print() {
+    console.log(this.items.join(" <- "));
+  }
+}
+
+// Testando
+const queue = new Queue();
+queue.enqueue("Joyce");
+queue.enqueue("Carlos");
+queue.enqueue("Ana");
+queue.print(); // Joyce <- Carlos <- Ana
+queue.dequeue();
+queue.print(); // Carlos <- Ana
